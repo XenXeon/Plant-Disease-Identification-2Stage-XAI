@@ -13,7 +13,7 @@
 ## 🏗️ Overview
 
 <p align="center">
-  <img src="static/images/teaser.jpg" width="70%" alt="Pipeline Architecture">
+  <img src="static/images/teaser.jpg" width="80%" alt="Pipeline Architecture">
 </p>
 
 Our method decouples localization from classification to handle complex backgrounds effectively:
