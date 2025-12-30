@@ -1,7 +1,7 @@
 # An Explainable AI based Plant Disease Identification using a Two-Stage Detection-Classification Pipeline
 
-[![Project Page](https://img.shields.io/badge/Project-Page-green?style=for-the-badge&logo=googlechrome&logoColor=white)](https://YOUR_USERNAME.github.io/YOUR_REPO_NAME) 
-[![Kaggle](https://img.shields.io/badge/Kaggle-Code-blue?style=for-the-badge&logo=kaggle&logoColor=white)](YOUR_KAGGLE_LINK_HERE) 
+[![Project Page](https://img.shields.io/badge/Project-Page-green?style=for-the-badge&logo=googlechrome&logoColor=white)](https://xenxeon.github.io/Plant-Disease-Identification-2Stage-XAI/) 
+[![Kaggle](https://img.shields.io/badge/Kaggle-Code-blue?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/tahirhasankingshuk/two-stage-detection-classification-pipeline) 
 [![Conference](https://img.shields.io/badge/ICCIT-2025-red?style=for-the-badge)](https://iccit.org.bd/2025/)
 
 **Official implementation of the paper presented at the 2025 28th International Conference on Computer and Information Technology (ICCIT).**
