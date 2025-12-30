@@ -6,13 +6,13 @@
   <meta property="og:title" content="Plant Disease Identification - ICCIT 2025">
   <meta property="og:description" content="Official implementation of the ICCIT 2025 paper: An Explainable AI based Plant Disease Identification using a Two-Stage Detection-Classification Pipeline.">
   <meta property="og:url" content="https://YOUR_USERNAME.github.io/YOUR_REPO_NAME">
-  <meta property="og:image" content="static/images/your_teaser.png">
+  <meta property="og:image" content="static/images/teaser.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:title" content="Plant Disease Identification - ICCIT 2025">
   <meta name="twitter:description" content="Official implementation of the ICCIT 2025 paper: An Explainable AI based Plant Disease Identification using a Two-Stage Detection-Classification Pipeline.">
-  <meta name="twitter:image" content="static/images/your_teaser.png">
+  <meta name="twitter:image" content="static/images/teaser.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords" content="Plant Disease Identification, YOLOv11, ECA-NFNet, ICCIT 2025, Computer Vision, Agriculture AI">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,7 +111,7 @@
       <img src="static/images/teaser.jpg" alt="Pipeline Architecture" style="width:100%; border-radius:10px;">
       <h2 class="subtitle has-text-centered">
         <br>
-        Overview of the proposed <b>Two-Stage Detection-Classification Pipeline</b> using YOLOv11n for localization and ECA-NFNet-L0 for disease classification.
+        [cite_start]Overview of the proposed <b>Two-Stage Detection-Classification Pipeline</b>. <br>Stage 1 utilizes <b>YOLOv11n</b> for leaf localization, while Stage 2 employs <b>ECA-NFNet-L0</b> for fine-grained disease classification[cite: 53].
       </h2>
     </div>
   </div>
@@ -124,19 +124,137 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Plant disease looms over global food security as a significant threat. Despite this, accurately identifying diseases from images taken in real-world field conditions remains a major challenge. Standard classification models often fail in scenarios with complex backgrounds, variable lighting, and image noise characteristic of datasets like PlantDoc.
+            Plant disease looms over global food security as a significant threat. Despite this, accurately identifying diseases from images taken in real-world field conditions remains a major challenge. [cite_start]Standard classification models often fail in scenarios with complex backgrounds, variable lighting, and image noise characteristic of datasets like PlantDoc[cite: 13, 14, 15].
           </p>
           <p>
-            To address this, this study proposes a robust two-stage detection-classification pipeline. The first stage uses a <b>YOLOv11n</b> object detector that was trained to find and separate leaf areas from their messy surroundings. It got a mean Average Precision (mAP@0.5) of <b>92.9%</b>. In the second stage, these cropped leaf images are put into an <b>ECA-NFNet-L0</b> classification framework that uses a smart channel attention mechanism to find diseases in detail. 
+            To address this, this study proposes a robust two-stage detection-classification pipeline. The first stage uses a <b>YOLOv11n</b> object detector that was trained to find and separate leaf areas from their messy surroundings. It got a mean Average Precision (mAP@0.5) of <b>92.9%</b>. [cite_start]In the second stage, these cropped leaf images are put into an <b>ECA-NFNet-L0</b> classification framework that uses a smart channel attention mechanism to find diseases in detail[cite: 16, 17, 18].
           </p>
           <p>
-            On the hard-to-use PlantDoc dataset, our full pipeline gets a final classification accuracy of <b>78.5%</b> and a weighted F1-score of <b>78.4%</b>. This decoupled method, which separates localization from classification, makes the model much stronger and is a better way to diagnose plant diseases in the field.
+            On the hard-to-use PlantDoc dataset, our full pipeline gets a final classification accuracy of <b>78.5%</b> and a weighted F1-score of <b>78.4%</b>. [cite_start]This decoupled method, which separates localization from classification, makes the model much stronger and is a better way to diagnose plant diseases in the field[cite: 19, 20].
           </p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Methodology</h2>
+    <div class="content has-text-justified">
+      <p>
+        [cite_start]Our approach tackles the "generalization gap" between lab-based and field-based plant disease datasets by decoupling the problem into two distinct stages[cite: 27, 32].
+      </p>
+      <div class="columns is-centered">
+        <div class="column is-half">
+            <div class="box">
+                <h4 class="title is-5">Stage 1: Leaf Localization (YOLOv11)</h4>
+                <p>
+                    We employ the YOLOv11n architecture to detect and crop leaves from complex backgrounds. [cite_start]Unlike standard classification which processes the entire noisy image, our detector isolates the region of interest, removing background clutter[cite: 61, 72]. 
+                    <br><br>
+                    [cite_start]<b>Key Metric:</b> The detector achieves a <b>92.9% mAP@0.5</b> on the merged leaf dataset[cite: 18].
+                </p>
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="box">
+                <h4 class="title is-5">Stage 2: Disease Classification (ECA-NFNet)</h4>
+                <p>
+                   The cropped leaf regions are processed by an <b>ECA-NFNet-L0</b> (Efficient Channel Attention Normalization-Free Network). [cite_start]This network uses an attention mechanism to focus on specific disease characteristics without the need for Batch Normalization layers, improving stability and performance[cite: 117, 125].
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+      
+      <h3 class="title is-4">1. Detection Performance (YOLO Comparison)</h3>
+      <div class="content has-text-justified">
+        <p>
+            We compared YOLOv8 and YOLOv11 on the PlantDoc dataset. [cite_start]YOLOv11 demonstrated superior performance in localizing leaves in complex environments[cite: 178, 180].
+        </p>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+            <table class="table is-striped is-fullwidth is-hoverable">
+            <thead>
+                <tr>
+                <th>Model</th>
+                <th>mAP@0.5</th>
+                <th>mAP@0.5:0.95</th>
+                <th>F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>YOLOv8</td>
+                <td>63.4%</td>
+                <td>51.0%</td>
+                <td>59.0%</td>
+                </tr>
+                <tr>
+                <td>YOLOv11</td>
+                <td>69.5%</td>
+                <td>54.0%</td>
+                <td>65.0%</td>
+                </tr>
+                <tr style="font-weight:bold; background-color: #f5f5f5;">
+                <td>YOLOv11 (Merged Leaf)</td>
+                <td>92.9%</td>
+                <td>72.0%</td>
+                <td>87.0%</td>
+                </tr>
+            </tbody>
+            </table>
+            <p class="is-size-7 has-text-centered"><i>Table 1: Performance comparison. [cite_start]The "Merged Leaf" model treats all leaves as a single class for robust localization[cite: 184].</i></p>
+        </div>
+      </div>
+
+      <br>
+
+      <h3 class="title is-4">2. Classification Performance</h3>
+      <div class="content has-text-justified">
+        <p>
+            [cite_start]On the held-out test set, our ECA-NFNet-L0 classifier achieved robust results across diverse disease classes[cite: 226].
+        </p>
+        <ul>
+            <li><b>Overall Accuracy:</b> 78.5%</li>
+            <li><b>Weighted F1-Score:</b> 78.4%</li>
+            <li><b>Validation Accuracy Peak:</b> 79.1%</li>
+        </ul>
+      </div>
     </div>
 </section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Explainable AI (XAI)</h2>
+      <div class="content has-text-justified">
+        <p>
+            To ensure trust in our model's predictions, we applied <b>Grad-CAM</b> (Gradient-weighted Class Activation Mapping). [cite_start]The visualizations below confirm that the model focuses on the actual diseased regions of the leaf rather than background noise[cite: 228, 229].
+        </p>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+            <img src="static/images/gradcam1.jpg" alt="Apple Rust Grad-CAM" style="border-radius: 5px; width: 80%;">
+            [cite_start]<p><b>Apple Rust Leaf:</b> The model accurately focuses on the rust spots[cite: 242].</p>
+        </div>
+        <div class="column is-half has-text-centered">
+             <img src="static/images/gradcam2.jpg" alt="Potato Blight Grad-CAM" style="border-radius: 5px; width: 80%;">
+            [cite_start]<p><b>Potato Leaf Late Blight:</b> Attention is centered on the necrotic lesions[cite: 247].</p>
+        </div>
+      </div>
+    </div>
+</section>
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
