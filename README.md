@@ -1,80 +1,55 @@
-# Academic Project Page Template
+# An Explainable AI based Plant Disease Identification using a Two-Stage Detection-Classification Pipeline
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+[![Project Page](https://img.shields.io/badge/Project-Page-green?style=for-the-badge&logo=googlechrome&logoColor=white)](https://YOUR_USERNAME.github.io/YOUR_REPO_NAME) 
+[![Kaggle](https://img.shields.io/badge/Kaggle-Code-blue?style=for-the-badge&logo=kaggle&logoColor=white)](YOUR_KAGGLE_LINK_HERE) 
+[![Conference](https://img.shields.io/badge/ICCIT-2025-red?style=for-the-badge)](https://iccit.org.bd/2025/)
 
-A clean, responsive template for academic project pages.
+**Official implementation of the paper published in 2025 28th International Conference on Computer and Information Technology (ICCIT).**
 
+> **Abstract:** Plant disease looms over global food security as a significant threat. Despite this, accurately identifying diseases from images taken in real-world field conditions remains a major challenge. Standard classification models often fail in scenarios with complex backgrounds, variable lighting, and image noise. To address this, this study proposes a robust two-stage detection-classification pipeline using YOLOv11n and ECA-NFNet-L0.
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+---
 
+## 🏗️ Pipeline Overview
+Our method decouples localization from classification to handle complex backgrounds effectively:
 
+1.  **Stage 1 (Localization):** A **YOLOv11n** object detector locates and crops leaf areas, achieving a mAP@0.5 of **92.9%**.
+2.  **Stage 2 (Classification):** Cropped leaves are processed by an **ECA-NFNet-L0** framework with efficient channel attention.
 
-## Start using the template
-To start using the template click on `Use this Template`.
+**Results on PlantDoc Dataset:**
+* **Accuracy:** 78.5%
+* **Weighted F1-score:** 78.4%
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+---
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+## 🚀 Getting Started
 
-## What's New
+### Prerequisites
+The code is hosted on Kaggle for easy reproducibility. You do not need to set up a local environment if you run the notebook directly.
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+### Running the Code
+Click the button below to access the full training and inference pipeline:
 
-## Components
+[<img src="https://kaggle.com/static/images/open-in-kaggle.svg" height="40"/>](YOUR_KAGGLE_LINK_HERE)
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+---
 
-## Customization
+## 📂 Dataset
+We utilized the **PlantDoc** dataset for training and evaluation.
+* **Original Dataset:** [Link to PlantDoc](https://github.com/pratikkayal/PlantDoc-Dataset)
+* **Preprocessing:** Details on augmentation and resizing are available in the notebook.
 
-The HTML file has TODO comments showing what to replace:
+---
 
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
+##  citation
+If you find this work useful, please cite our paper:
 
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
-
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
-
-## Tips
-
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
-
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
-
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+```bibtex
+@inproceedings{Hasan2025PlantDisease,
+  title={An Explainable AI based Plant Disease Identification using a Two-Stage Detection-Classification Pipeline with YOLO and ECA-NFNet Framework},
+  author={Hasan, Tahir and Ilham, Md. Fatin and Nasim, Md. Farhan Tanvir},
+  booktitle={2025 28th International Conference on Computer and Information Technology (ICCIT)},
+  year={2025},
+  publisher={IEEE},
+  address={Cox’s Bazar, Bangladesh}
+}
