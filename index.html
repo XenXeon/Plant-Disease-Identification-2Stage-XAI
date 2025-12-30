@@ -238,20 +238,28 @@
       <h2 class="title is-3 has-text-centered">Explainable AI (XAI)</h2>
       <div class="content has-text-justified">
         <p>
-            To ensure trust in our model's predictions, we applied <b>Grad-CAM</b> (Gradient-weighted Class Activation Mapping). The visualizations below confirm that the model focuses on the actual diseased regions of the leaf rather than background noise[cite: 228, 229].
+            To ensure trust in our model's predictions, we applied <b>Grad-CAM</b> (Gradient-weighted Class Activation Mapping). The visualizations below confirm that the model focuses on the actual diseased regions of the leaf rather than background noise.
         </p>
       </div>
 
       <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-            <img src="static/images/gradcam1.jpg" alt="Apple Rust Grad-CAM" style="border-radius: 5px; width: 80%;">
-            <p><b>Apple Rust Leaf:</b> The model accurately focuses on the rust spots[cite: 242].</p>
-        </div>
-        <div class="column is-half has-text-centered">
-             <img src="static/images/gradcam2.jpg" alt="Potato Blight Grad-CAM" style="border-radius: 5px; width: 80%;">
-            <p><b>Potato Leaf Late Blight:</b> Attention is centered on the necrotic lesions[cite: 247].</p>
+        <div class="column is-8 has-text-centered">
+            <img src="static/images/gradcam1.jpg" alt="Apple Rust Grad-CAM" style="border-radius: 5px; width: 100%;">
+            <p class="is-size-6">
+              <b>Figure 7:</b> Grad-CAM visualization for <b>Apple Rust Leaf</b>. The model accurately focuses on the rust spots (warm colors indicate high attention).
+            </p>
         </div>
       </div>
+
+      <br> <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+             <img src="static/images/gradcam2.jpg" alt="Potato Blight Grad-CAM" style="border-radius: 5px; width: 100%;">
+            <p class="is-size-6">
+              <b>Figure 8:</b> Grad-CAM visualization for <b>Potato Leaf Late Blight</b>. Attention is centered on the necrotic lesions rather than the background.
+            </p>
+        </div>
+      </div>
+
     </div>
 </section>
 
